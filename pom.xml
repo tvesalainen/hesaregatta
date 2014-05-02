@@ -10,7 +10,7 @@
     <artifactId>hesaregatta</artifactId>
     <version>1.0.1</version>
     <packaging>war</packaging>
-    <name>Helsinki Regatta webapp</name>
+    <name>Helsinki Regatta Webapp</name>
     <description>Helsinki Regatta Webapp is a java web application in Google App Engine</description>
     <url>https://github.com/tvesalainen/${project.artifactId}</url>
     <licenses>
@@ -36,8 +36,14 @@
             <url>https://github.com/tvesalainen</url>
         </developer>
     </developers>
+    <organization>
+        <name>Helsinki Regatta</name>
+        <url>www.helsinkiregatta.fi</url>
+    </organization>
     <properties>
+        <appengine-web-app.application>helsinkiregatta</appengine-web-app.application>
         <appengine-web-app.version>1-0-1</appengine-web-app.version><!-- this is the same as project.version with dots changed to dashes-->
+        <hoski-admin-version>1.0.2</hoski-admin-version>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <appengine.app.version>1</appengine.app.version>
@@ -53,6 +59,12 @@
             <version>${project.version}</version>
         </dependency>    
         <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>hoski-admin</artifactId>
+            <version>${hoski-admin-version}</version>
+            <classifier>jar-with-dependencies</classifier>
+        </dependency>    
+        <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
             <version>${appengine.target.version}</version>
@@ -63,6 +75,22 @@
         <outputDirectory>target/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory> 
                                    
         <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>create-admin-install.zip</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptor>${basedir}/src/main/assembly/admin-install.xml</descriptor>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -99,6 +127,12 @@
                             <directory>${basedir}/src/main/webapp/WEB-INF</directory>
                             <filtering>true</filtering>
                             <targetPath>WEB-INF</targetPath>
+                        </resource>
+                        <resource>
+                            <directory>${basedir}/target</directory>
+                            <includes>
+                                <include>*.zip</include>
+                            </includes>
                         </resource>
                     </webResources>
                 </configuration>

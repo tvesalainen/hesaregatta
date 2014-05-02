@@ -16,7 +16,7 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-    <application>helsinkiregatta</application>
+    <application>${appengine-web-app.application}</application>
     <version>${appengine-web-app.version}</version>
 
   <!--
