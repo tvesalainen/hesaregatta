@@ -7,7 +7,7 @@
     <packaging>war</packaging>
     <name>Helsinki Regatta Webapp</name>
     <description>Helsinki Regatta Webapp is a java web application in Google App Engine</description>
-    <url>https://github.com/tvesalainen/${project.artifactId}</url>
+    <url>https://github.com/tvesalainen/hesaregatta</url>
     <licenses>
         <license>
             <name>GNU Affero General Public License, Version 3.0</name>
@@ -16,9 +16,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git://github.com/tvesalainen/${project.artifactId}</connection>
-        <developerConnection>scm:git:git://github.com/tvesalainen/${project.artifactId}</developerConnection>
-        <url>https://github.com/tvesalainen/${project.artifactId}</url>
+        <connection>scm:git:git://github.com/tvesalainen/hesaregatta</connection>
+        <developerConnection>scm:git:git://github.com/tvesalainen/hesaregatta</developerConnection>
+        <url>https://github.com/tvesalainen/hesaregatta</url>
     </scm>    
     <developers>
         <developer>
@@ -39,24 +39,24 @@
         <hoski-admin-version>1.0.3</hoski-admin-version>    <!-- version of admin install zip-->
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <appengine.app.version>1</appengine.app.version>
         <appengine.target.version>1.9.3</appengine.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-        <!-- Compile/runtime dependencies -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>hoski-weblib</artifactId>
-            <version>1.0.1</version>
+            <version>[1.0.1,]</version>
             <type>war</type>
-        </dependency>    
+        </dependency>
+        <!-- This dependency is for downloadable admin.zip -->    
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>hoski-admin</artifactId>
             <version>${hoski-admin-version}</version>
             <classifier>jar-with-dependencies</classifier>
+            <!-- for some reason dependencies are in effect? -->
             <exclusions>
                 <exclusion>
                     <groupId>${project.groupId}</groupId>
@@ -80,7 +80,7 @@
     </dependencies>
       
     <build>
-        <outputDirectory>target/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory> 
+        <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory> 
                                    
         <plugins>
             <plugin>
@@ -141,7 +141,7 @@
                             <targetPath>WEB-INF</targetPath>
                         </resource>
                         <resource>
-                            <directory>${basedir}/target</directory>
+                            <directory>${project.build.directory}</directory>
                             <includes>
                                 <include>*.zip</include>
                             </includes>
