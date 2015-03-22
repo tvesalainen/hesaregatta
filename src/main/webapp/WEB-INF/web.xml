@@ -158,6 +158,10 @@ default values in race entry</description>
         <url-pattern>/remote_api</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>MenuServlet</servlet-name>
+        <url-pattern>/races/menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RaceEntryServlet</servlet-name>
         <url-pattern>/race</url-pattern>
     </servlet-mapping>
