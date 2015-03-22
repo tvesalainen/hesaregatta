@@ -158,37 +158,8 @@ default values in race entry</description>
         <url-pattern>/remote_api</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ActivationServlet</servlet-name>
-        <url-pattern>/activate</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/logout</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EventServlet</servlet-name>
-        <url-pattern>/member/event</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PatrolSwapServlet</servlet-name>
-        <url-pattern>/member/swap</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MenuServlet</servlet-name>
-        <url-pattern>/member/menu</url-pattern>
-        <url-pattern>/races/menu</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>RaceEntryServlet</servlet-name>
         <url-pattern>/race</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>InspectionOptServlet</servlet-name>
-        <url-pattern>/member/insopt</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DownloadServlet</servlet-name>
@@ -208,7 +179,6 @@ default values in race entry</description>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>KeyInfoServlet</servlet-name>
-        <url-pattern>/member/keyinfo</url-pattern>
         <url-pattern>/races/keyinfo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -217,7 +187,6 @@ default values in race entry</description>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EntityListServlet</servlet-name>
-        <url-pattern>/member/list</url-pattern>
         <url-pattern>/races/list</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
