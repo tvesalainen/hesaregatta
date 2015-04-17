@@ -53,10 +53,10 @@ font-family: Arial;
 #leftside
 {
 	float: left;
-	width: 170px;
+	width: 770px;
 	padding: 0px 0;
 	margin: 0 20px;
-	display: inline;
+	xxdisplay: inline;
 }
 #menu
 {
@@ -65,7 +65,7 @@ font-family: Arial;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     border: 0px solid;
-    font-size: 16px;
+    font-size: 12px;
     text-align: right;
     font-weight: bold;
     }
@@ -79,15 +79,17 @@ font-family: Arial;
 {
     margin: 0;
     padding: 10px;
+    display: inline;
 }
 
 
 #text
 {
-	float: left;
+	xxfloat: left;
+        clear: left;
 	width: 770px;
 	padding: 0px 0;
-	margin: 0px 0px;
+	margin: 0px 20px;
         background: white;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
