@@ -20,7 +20,7 @@ font-family: Arial;
     height: 150px;
     color: white;
     font-size: 60px;
-    text-align: right;
+    text-align: center;
     
 }
 
@@ -35,7 +35,7 @@ font-family: Arial;
 
 #otsikko
 {
-	float: right;
+	float: left;
 	width: 700px;
 	padding: 0;
 	margin: 0px 15px 0 0;
@@ -56,7 +56,7 @@ font-family: Arial;
 	width: 770px;
 	padding: 0px 0;
 	margin: 0 20px;
-	xxdisplay: inline;
+	
 }
 #menu
 {
@@ -85,7 +85,7 @@ font-family: Arial;
 
 #text
 {
-	xxfloat: left;
+
         clear: left;
 	width: 770px;
 	padding: 0px 0;

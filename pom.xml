@@ -98,12 +98,14 @@
                             <filtering>true</filtering>
                             <targetPath>WEB-INF</targetPath>
                         </resource>
+                        <!--
                         <resource>
                             <directory>${project.build.directory}</directory>
                             <includes>
                                 <include>*.zip</include>
                             </includes>
                         </resource>
+                        -->
                     </webResources>
                 </configuration>
             </plugin>
