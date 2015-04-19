@@ -101,7 +101,10 @@ font-family: Arial;
     font-size: 14px;
 }
 
-
+.kapea
+{
+    width: 500px;
+}
 #kuva
 {
 	float: right;
