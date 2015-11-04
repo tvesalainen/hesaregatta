@@ -218,18 +218,6 @@ default values in race entry</description>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     <security-constraint>
-        <display-name>https</display-name>
-        <web-resource-collection>
-            <web-resource-name>HTTPS</web-resource-name>
-            <description/>
-            <url-pattern>/member*</url-pattern>
-        </web-resource-collection>
-        <user-data-constraint>
-            <description/>
-            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-        </user-data-constraint>
-    </security-constraint>
-    <security-constraint>
         <display-name>Upload</display-name>
         <web-resource-collection>
             <web-resource-name>Upload</web-resource-name>
