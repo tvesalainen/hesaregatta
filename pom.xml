@@ -3,12 +3,12 @@
     <parent>
         <groupId>fi.hoski</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.5</version>
+        <version>1.0.6</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hoski</groupId>
     <artifactId>helsinkiregatta</artifactId>
-    <version>5</version> <!-- version must be without dots because it s used in appengine-web.xml -->
+    <version>6</version> <!-- version must be without dots because it s used in appengine-web.xml -->
     <packaging>war</packaging>
     <name>Helsinki Regatta Webapp</name>
     <description>Helsinki Regatta Webapp is a java web application in Google App Engine</description>
