@@ -3,12 +3,12 @@
     <parent>
         <groupId>fi.hoski</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>fi.hoski</groupId>
     <artifactId>helsinkiregatta</artifactId>
-    <version>6</version> <!-- version must be without dots because it s used in appengine-web.xml -->
+    <version>7</version> <!-- version must be without dots because it s used in appengine-web.xml -->
     <packaging>war</packaging>
     <name>Helsinki Regatta Webapp</name>
     <description>Helsinki Regatta Webapp is a java web application in Google App Engine</description>
@@ -38,23 +38,6 @@
             <groupId>fi.hoski</groupId>
             <artifactId>hoski-lib</artifactId>
         </dependency>
-        <!-- This dependency is for downloadable admin.zip -->    
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>hoski-admin</artifactId>
-            <classifier>jar-with-dependencies</classifier>
-            <!-- for some reason dependencies are in effect? -->
-            <exclusions>
-                <exclusion>
-                    <groupId>${project.groupId}</groupId>
-                    <artifactId>hoski-lib</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.vesalainen.dsql</groupId>
-                    <artifactId>dsql</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>    
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
@@ -65,25 +48,6 @@
         <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory> 
                                    
         <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <finalName>${project.artifactId}</finalName>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>create-admin-install.zip</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <descriptor>${basedir}/src/main/assembly/admin-install.xml</descriptor>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>

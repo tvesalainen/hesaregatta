@@ -1,15 +1,15 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>Helsinki Regatta</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="css/hoski.css" />
         <link rel="stylesheet" type="text/css" href="css/hr.css" />
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="/js/hoskievent.js"></script>                
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="/js/hoskievent.js"></script>                
         <script src="/js/lang.js"></script>
-        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
         <script src="/js/menu.js"></script>
 
 
@@ -91,7 +91,7 @@
                 </div>
 
                 <div id="ilmoittautuminen" class="menu-target">
-                    <h2 lang="fi">Ilmoittautuminen</h2>
+                    <h2 lang="fi">Ilmoittautuminen <span class="hoski-year"></span></h2>
                     <h2 lang="sv">Anmälan</h2>
                     <h2 lang="en">Entry</h2>
                     <div class="load ajaxload events races" title="/races/menu?menuKind=RaceFleet&amp;filter=Ranking$ne;true">&nbsp;</div>
@@ -153,9 +153,21 @@
             <div id="logos">
                 <img src="img/logot.png">
             </div>
-
+            <p><small><a class="login" href="/admin?action=login">kirjaudu sisään</a></small>
+            <p><small><a class="logout" href="/admin?action=logout">kirjaudu ulos</a></small>
             <p>Helsinki Regatta - Yhteistyössä IT-Apu Johanna Vesalainen</p>
 
+        </div>
+        <div id="admin-dialog" title="Hallinta">
+            <button id="admin-dialog-sailwave-button" type="button">Hae SailWave tiedosto</button><br>
+            <button id="admin-dialog-remove-attachment-button" type="button">Poista liitteitä</button><br>
+            <button id="admin-dialog-add-attachment-button" type="button">Lisää liite</button>
+        </div>
+        <div id="admin-dialog-sailwave" title="SailWave">
+        </div>
+        <div id="admin-dialog-remove-attachment" title="Poista liitteet">
+        </div>
+        <div id="admin-dialog-add-attachment" title="Lisää liite">
         </div>
     </body>
 </html>
