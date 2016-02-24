@@ -55,8 +55,12 @@ td, th { text-align: left; padding: 0 2px; vertical-align: top; border-bottom: 1
 .columnWide { clear: both; padding: 10px }
 ul { list-style-type: none; margin: 0; padding: 0}
 ul.menu { list-style-type: square; padding: 0 20px; font-size: 140% }
-p.l1 { font-weight: bold; visibility:visible; }
-p.l2 { margin: 0.5em 0; }
+p.Year,p.RaceSeries,p.RaceFleet { display: none; }
+#ilmoittautuminen p.RaceSeries { display: inline; }
+#ilmoittautuminen p.RaceFleet { display: inline; }
+#tulokset p.Year{ display: inline; }
+#valokuvia p.Year{ display: inline; }
+#ilmoittautuminen p.Attachment { font-weight: bold; display: none; }
 div.showyear * p.l1 { visibility:visible; }
 .menu li { margin-bottom: 14px; }
 .races ul.l2 { padding-left: 40px; }
